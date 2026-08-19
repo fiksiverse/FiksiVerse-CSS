@@ -321,7 +321,9 @@ input[type="search"],
 #theme-name,
 #theme-description,
 #theme-css,
-.fv-theme-css-editor {
+.fv-theme-css-editor,
+#modal-tracker-book-picker .tracker-book-search-wrap .form-input,
+#tracker-book-search {
   background: #111008 !important;
   background-color: #111008 !important;
   color: #F3E8C8 !important;
@@ -342,7 +344,8 @@ input::placeholder,
 #modal-edit-profile input::placeholder,
 #modal-edit-profile textarea::placeholder,
 #modal-theme-editor input::placeholder,
-#modal-theme-editor textarea::placeholder {
+#modal-theme-editor textarea::placeholder,
+#tracker-book-search::placeholder {
   color: #A49777 !important;
   opacity: 1 !important;
 }
@@ -363,7 +366,8 @@ input:focus,
 #modal-theme-editor input:focus,
 #modal-theme-editor textarea:focus,
 #form-theme-editor input:focus,
-#form-theme-editor textarea:focus {
+#form-theme-editor textarea:focus,
+#tracker-book-search:focus {
   border-color: #D4AF37 !important;
   box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.16), inset 0 0 4px rgba(212, 175, 55, 0.08) !important;
   background: #151209 !important;
@@ -380,7 +384,8 @@ input:focus,
   border-color: rgba(212, 175, 55, 0.15) !important;
 }
 
-.search-container i {
+.search-container i,
+.tracker-book-search-wrap > i {
   color: #D4AF37 !important;
 }
 
@@ -1140,7 +1145,7 @@ button.tracker-more-btn:hover {
 }
 
 .modal-header {
-  border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.2) !important;
 }
 
 .modal-title {
@@ -1536,7 +1541,7 @@ button[title="Edit"] {
 
 .password-reset-box {
   background: #0B0A06 !important;
-  border: 1px solid rgba(212, 175, 55, 0.35) !important;
+  border: 1px solid rgba(212, 175, 55, 0.35);
 }
 
 .password-reset-desc {
@@ -1790,7 +1795,7 @@ button[title="Edit"] {
 [style*="background: rgba(56,189,248"],
 [style*="background:rgba(56, 189, 248"],
 [style*="background: rgba(56, 189, 248"] {
-  background: rgba(212, 175, 55, 0.12) !important;
+  background: rgba(212, 175, 55, 0.12);
   border-color: rgba(212, 175, 55, 0.3);
   color: #FFE9A8 !important;
 }
@@ -2158,6 +2163,70 @@ button[onclick*="modal-faq"]:hover {
 
 #modal-booklist-form .booklist-book-option-author {
   color: #A49777 !important;
+}
+
+#modal-tracker-book-picker,
+#modal-tracker-book-picker .modal-box,
+body #modal-tracker-book-picker .modal-box {
+  background: #0B0A06 !important;
+  background-color: #0B0A06 !important;
+  border: 1px solid rgba(212, 175, 55, 0.35) !important;
+  color: #F3E8C8 !important;
+}
+
+#modal-tracker-book-picker .modal-title,
+#modal-tracker-book-picker .modal-title i {
+  color: #FFE9A8 !important;
+}
+
+#modal-tracker-book-picker .tracker-book-picker {
+  background: transparent !important;
+}
+
+#modal-tracker-book-picker .tracker-book-option,
+.tracker-book-picker .tracker-book-option {
+  background: #111008 !important;
+  background-color: #111008 !important;
+  border: 1px solid rgba(212, 175, 55, 0.2) !important;
+  color: #F3E8C8 !important;
+}
+
+#modal-tracker-book-picker .tracker-book-option:hover,
+.tracker-book-picker .tracker-book-option:hover {
+  background: #151209 !important;
+  background-color: #151209 !important;
+  border-color: rgba(212, 175, 55, 0.45) !important;
+}
+
+#modal-tracker-book-picker .tracker-book-option.selected,
+.tracker-book-picker .tracker-book-option.selected {
+  background: #17140A !important;
+  background-color: #17140A !important;
+  border-color: #D4AF37 !important;
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.16) !important;
+}
+
+#modal-tracker-book-picker .tracker-book-option-info strong,
+.tracker-book-picker .tracker-book-option-info strong {
+  color: #FFE9A8 !important;
+}
+
+#modal-tracker-book-picker .tracker-book-option-info small,
+.tracker-book-picker .tracker-book-option-info small {
+  color: #A49777 !important;
+}
+
+#modal-tracker-book-picker .tracker-book-option-check,
+.tracker-book-picker .tracker-book-option-check {
+  border: 1.5px solid rgba(212, 175, 55, 0.4) !important;
+  background: #0B0A06 !important;
+}
+
+#modal-tracker-book-picker .tracker-book-option.selected .tracker-book-option-check,
+.tracker-book-picker .tracker-book-option.selected .tracker-book-option-check {
+  background: #D4AF37 !important;
+  border-color: #FFE9A8 !important;
+  color: #050504 !important;
 }
 
 .fv-theme-create-wrap,
