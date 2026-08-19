@@ -198,7 +198,10 @@ select:focus-visible,
 #sec-my-tracker .tracker-add-btn,
 .tracker-header .tracker-add-btn,
 button.tracker-add-btn,
-.tracker-empty .btn-galaxy-primary {
+.tracker-empty .btn-galaxy-primary,
+#detail-content form#form-quick-comment button,
+#modal-all-comments button[type="submit"],
+[id^="reply-form-"] button[type="submit"] {
   background: linear-gradient(135deg, #D4AF37 0%, #B89020 100%) !important;
   color: #050504 !important;
   border: 1px solid #FFE9A8 !important;
@@ -214,7 +217,10 @@ button.tracker-add-btn,
 #sec-my-tracker .tracker-add-btn:hover,
 .tracker-header .tracker-add-btn:hover,
 button.tracker-add-btn:hover,
-.tracker-empty .btn-galaxy-primary:hover {
+.tracker-empty .btn-galaxy-primary:hover,
+#detail-content form#form-quick-comment button:hover,
+#modal-all-comments button[type="submit"]:hover,
+[id^="reply-form-"] button[type="submit"]:hover {
   background: linear-gradient(135deg, #F4D77D 0%, #D4AF37 100%) !important;
   color: #000000 !important;
   box-shadow: 0 6px 18px rgba(212, 175, 55, 0.3) !important;
@@ -323,7 +329,10 @@ input[type="search"],
 #theme-css,
 .fv-theme-css-editor,
 #modal-tracker-book-picker .tracker-book-search-wrap .form-input,
-#tracker-book-search {
+#tracker-book-search,
+#detail-content form#form-quick-comment input,
+#modal-all-comments input#full-comment-input,
+[id^="input-reply-form-"] {
   background: #111008 !important;
   background-color: #111008 !important;
   color: #F3E8C8 !important;
@@ -345,7 +354,10 @@ input::placeholder,
 #modal-edit-profile textarea::placeholder,
 #modal-theme-editor input::placeholder,
 #modal-theme-editor textarea::placeholder,
-#tracker-book-search::placeholder {
+#tracker-book-search::placeholder,
+#detail-content form#form-quick-comment input::placeholder,
+#modal-all-comments input#full-comment-input::placeholder,
+[id^="input-reply-form-"]::placeholder {
   color: #A49777 !important;
   opacity: 1 !important;
 }
@@ -367,7 +379,10 @@ input:focus,
 #modal-theme-editor textarea:focus,
 #form-theme-editor input:focus,
 #form-theme-editor textarea:focus,
-#tracker-book-search:focus {
+#tracker-book-search:focus,
+#detail-content form#form-quick-comment input:focus,
+#modal-all-comments input#full-comment-input:focus,
+[id^="input-reply-form-"]:focus {
   border-color: #D4AF37 !important;
   box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.16), inset 0 0 4px rgba(212, 175, 55, 0.08) !important;
   background: #151209 !important;
@@ -389,54 +404,107 @@ input:focus,
   color: #D4AF37 !important;
 }
 
-input[type="checkbox"]:not([data-booklist-progress-toggle]),
+input[type="checkbox"],
 .exclude-follower-checkbox,
 #exclude-followers-select-all,
 #quick-comment-anonymous,
-[id^="anon-reply-form-"] {
+[id^="anon-reply-form-"],
+#detail-content input[type="checkbox"],
+#modal-all-comments input[type="checkbox"],
+#form-quick-comment input[type="checkbox"],
+input#quick-comment-anonymous {
   -webkit-appearance: none !important;
   appearance: none !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
   width: 18px !important;
   height: 18px !important;
   min-width: 18px !important;
   min-height: 18px !important;
-  background-color: #0B0A06 !important;
-  border: 1.5px solid rgba(212, 175, 55, 0.45) !important;
+  background: #111008 !important;
+  background-color: #111008 !important;
+  border: 1.5px solid #D4AF37 !important;
   border-radius: 4px !important;
-  display: inline-grid !important;
-  place-content: center !important;
   cursor: pointer !important;
   margin: 0 !important;
   padding: 0 !important;
-  transition: all 0.2s ease !important;
   outline: none !important;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.8) !important;
+  transition: all 0.2s ease !important;
+  vertical-align: middle !important;
+  position: relative !important;
+  opacity: 1 !important;
+  pointer-events: auto !important;
 }
 
-input[type="checkbox"]:not([data-booklist-progress-toggle]):checked {
-  background-color: #D4AF37 !important;
+input[type="checkbox"]:hover,
+#quick-comment-anonymous:hover,
+[id^="anon-reply-form-"]:hover,
+#detail-content input[type="checkbox"]:hover {
   border-color: #FFE9A8 !important;
-  box-shadow: 0 0 8px rgba(212, 175, 55, 0.35) !important;
+  box-shadow: 0 0 8px rgba(212, 175, 55, 0.3) !important;
+  background-color: #17140A !important;
 }
 
-input[type="checkbox"]:not([data-booklist-progress-toggle]):checked::before {
+input[type="checkbox"]:checked,
+#quick-comment-anonymous:checked,
+[id^="anon-reply-form-"]:checked,
+#detail-content input[type="checkbox"]:checked,
+#modal-all-comments input[type="checkbox"]:checked,
+#form-quick-comment input[type="checkbox"]:checked {
+  background: #111008 !important;
+  background-color: #111008 !important;
+  border-color: #D4AF37 !important;
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.3) !important;
+}
+
+input[type="checkbox"]:checked::before,
+#quick-comment-anonymous:checked::before,
+[id^="anon-reply-form-"]:checked::before,
+#detail-content input[type="checkbox"]:checked::before,
+#modal-all-comments input[type="checkbox"]:checked::before,
+#form-quick-comment input[type="checkbox"]:checked::before {
   content: "" !important;
+  display: block !important;
   width: 9px !important;
   height: 5px !important;
-  border-left: 2px solid #050504 !important;
-  border-bottom: 2px solid #050504 !important;
+  border-left: 2px solid #FFE9A8 !important;
+  border-bottom: 2px solid #FFE9A8 !important;
   transform: rotate(-45deg) translate(1px, -1px) !important;
 }
 
-input[type="checkbox"]:not([data-booklist-progress-toggle]):indeterminate {
-  background-color: #D4AF37 !important;
-  border-color: #FFE9A8 !important;
+input[type="checkbox"]:indeterminate,
+#exclude-followers-select-all:indeterminate {
+  background-color: #111008 !important;
+  border-color: #D4AF37 !important;
 }
 
-input[type="checkbox"]:not([data-booklist-progress-toggle]):indeterminate::before {
+input[type="checkbox"]:indeterminate::before,
+#exclude-followers-select-all:indeterminate::before {
   content: "" !important;
   width: 8px !important;
   height: 2px !important;
-  background-color: #050504 !important;
+  background-color: #FFE9A8 !important;
+}
+
+#detail-content label:has(input[type="checkbox"]),
+#modal-all-comments label:has(input[type="checkbox"]),
+#detail-content form#form-quick-comment label,
+form#form-quick-comment label {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  color: #D1C29D !important;
+  cursor: pointer !important;
+  margin-top: 6px !important;
+}
+
+#detail-content label:has(input[type="checkbox"]) span,
+#modal-all-comments label:has(input[type="checkbox"]) span,
+#detail-content form#form-quick-comment label span {
+  color: #D1C29D !important;
+  font-size: 11px !important;
 }
 
 .custom-privacy-options,
@@ -988,12 +1056,18 @@ button.tracker-more-btn:hover {
   box-shadow: 0 0 8px rgba(212, 175, 55, 0.25) !important;
 }
 
+#sec-my-tracker label.progress-display-setting,
 .progress-display-setting {
   background: #0B0A06 !important;
+  background-color: #0B0A06 !important;
   border: 1px solid rgba(212, 175, 55, 0.25) !important;
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.6) !important;
   position: relative !important;
   overflow: hidden !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  padding: 12px 14px !important;
 }
 
 .progress-display-setting-copy {
@@ -1012,18 +1086,16 @@ button.tracker-more-btn:hover {
 
 .progress-display-setting input[type="checkbox"],
 .progress-display-setting input[data-booklist-progress-toggle] {
+  display: none !important;
   position: absolute !important;
   opacity: 0 !important;
-  width: 1px !important;
-  height: 1px !important;
-  top: 0 !important;
-  left: 0 !important;
+  width: 0 !important;
+  height: 0 !important;
   margin: 0 !important;
   padding: 0 !important;
   pointer-events: none !important;
   border: none !important;
   background: transparent !important;
-  display: block !important;
   appearance: none !important;
   -webkit-appearance: none !important;
 }
@@ -1430,7 +1502,7 @@ button[onclick*="toggleReplyForm"] {
 .tracker-book-option-check,
 .add-booklist-option-check,
 .language-option-check {
-  border: 1px solid rgba(212, 175, 55, 0.4) !important;
+  border: 1px solid rgba(212, 175, 55, 0.4);
   background: #0B0A06 !important;
 }
 
@@ -1572,7 +1644,7 @@ button[title="Edit"] {
 .wrapped-modal-box,
 .wrapped-modal-box[data-wrapped-style="light"] {
   background: linear-gradient(160deg, #151209 0%, #0B0A06 60%, #050504 100%) !important;
-  border: 1px solid rgba(212, 175, 55, 0.4) !important;
+  border: 1px solid rgba(212, 175, 55, 0.4);
   color: #F3E8C8 !important;
 }
 
@@ -2167,7 +2239,10 @@ button[onclick*="modal-faq"]:hover {
 
 #modal-tracker-book-picker,
 #modal-tracker-book-picker .modal-box,
-body #modal-tracker-book-picker .modal-box {
+body #modal-tracker-book-picker .modal-box,
+#modal-tracker-book-picker > div,
+.tracker-book-picker,
+#tracker-book-picker {
   background: #0B0A06 !important;
   background-color: #0B0A06 !important;
   border: 1px solid rgba(212, 175, 55, 0.35) !important;
@@ -2175,7 +2250,8 @@ body #modal-tracker-book-picker .modal-box {
 }
 
 #modal-tracker-book-picker .modal-title,
-#modal-tracker-book-picker .modal-title i {
+#modal-tracker-book-picker .modal-title i,
+#modal-tracker-book-picker h3 {
   color: #FFE9A8 !important;
 }
 
@@ -2184,22 +2260,26 @@ body #modal-tracker-book-picker .modal-box {
 }
 
 #modal-tracker-book-picker .tracker-book-option,
-.tracker-book-picker .tracker-book-option {
+.tracker-book-picker .tracker-book-option,
+#tracker-book-picker .tracker-book-option {
   background: #111008 !important;
   background-color: #111008 !important;
-  border: 1px solid rgba(212, 175, 55, 0.2) !important;
+  border: 1px solid rgba(212, 175, 55, 0.22) !important;
   color: #F3E8C8 !important;
+  border-radius: 12px !important;
 }
 
 #modal-tracker-book-picker .tracker-book-option:hover,
-.tracker-book-picker .tracker-book-option:hover {
+.tracker-book-picker .tracker-book-option:hover,
+#tracker-book-picker .tracker-book-option:hover {
   background: #151209 !important;
   background-color: #151209 !important;
   border-color: rgba(212, 175, 55, 0.45) !important;
 }
 
 #modal-tracker-book-picker .tracker-book-option.selected,
-.tracker-book-picker .tracker-book-option.selected {
+.tracker-book-picker .tracker-book-option.selected,
+#tracker-book-picker .tracker-book-option.selected {
   background: #17140A !important;
   background-color: #17140A !important;
   border-color: #D4AF37 !important;
@@ -2207,23 +2287,28 @@ body #modal-tracker-book-picker .modal-box {
 }
 
 #modal-tracker-book-picker .tracker-book-option-info strong,
-.tracker-book-picker .tracker-book-option-info strong {
+.tracker-book-picker .tracker-book-option-info strong,
+#tracker-book-picker .tracker-book-option-info strong {
   color: #FFE9A8 !important;
 }
 
 #modal-tracker-book-picker .tracker-book-option-info small,
-.tracker-book-picker .tracker-book-option-info small {
+.tracker-book-picker .tracker-book-option-info small,
+#tracker-book-picker .tracker-book-option-info small {
   color: #A49777 !important;
 }
 
 #modal-tracker-book-picker .tracker-book-option-check,
-.tracker-book-picker .tracker-book-option-check {
+.tracker-book-picker .tracker-book-option-check,
+#tracker-book-picker .tracker-book-option-check {
   border: 1.5px solid rgba(212, 175, 55, 0.4) !important;
   background: #0B0A06 !important;
+  border-radius: 50% !important;
 }
 
 #modal-tracker-book-picker .tracker-book-option.selected .tracker-book-option-check,
-.tracker-book-picker .tracker-book-option.selected .tracker-book-option-check {
+.tracker-book-picker .tracker-book-option.selected .tracker-book-option-check,
+#tracker-book-picker .tracker-book-option.selected .tracker-book-option-check {
   background: #D4AF37 !important;
   border-color: #FFE9A8 !important;
   color: #050504 !important;
