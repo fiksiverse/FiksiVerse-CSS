@@ -201,7 +201,11 @@ button.tracker-add-btn,
 .tracker-empty .btn-galaxy-primary,
 #detail-content form#form-quick-comment button,
 #modal-all-comments button[type="submit"],
-[id^="reply-form-"] button[type="submit"] {
+[id^="reply-form-"] button[type="submit"],
+#list-recommended-users-home > div button,
+#list-explore-users .user-item button,
+.user-item button,
+#tab-profile .glass-card button[onclick*="openUserProfile"] {
   background: linear-gradient(135deg, #D4AF37 0%, #B89020 100%) !important;
   color: #050504 !important;
   border: 1px solid #FFE9A8 !important;
@@ -220,7 +224,9 @@ button.tracker-add-btn:hover,
 .tracker-empty .btn-galaxy-primary:hover,
 #detail-content form#form-quick-comment button:hover,
 #modal-all-comments button[type="submit"]:hover,
-[id^="reply-form-"] button[type="submit"]:hover {
+[id^="reply-form-"] button[type="submit"]:hover,
+#list-recommended-users-home > div button:hover,
+#list-explore-users .user-item button:hover {
   background: linear-gradient(135deg, #F4D77D 0%, #D4AF37 100%) !important;
   color: #000000 !important;
   box-shadow: 0 6px 18px rgba(212, 175, 55, 0.3) !important;
@@ -597,7 +603,7 @@ form#form-quick-comment label {
 
 .privacy-pill-desc {
   color: #A49777 !important;
-  font-size: 9.5px !important;
+  font-size: 11px !important;
   line-height: 1.25 !important;
   margin-top: 2px !important;
 }
@@ -713,7 +719,10 @@ h1, h2, h3, h4, h5, h6 {
 #explore-mode-users,
 #tab-book-single,
 #tab-auth-login,
-#tab-auth-register {
+#tab-auth-register,
+#public-tab-rec,
+#public-tab-added,
+#public-tab-booklist {
   background: transparent !important;
   border: none !important;
   color: #A49777 !important;
@@ -729,7 +738,8 @@ h1, h2, h3, h4, h5, h6 {
 .reading-tracker-tabs .auth-tab i,
 .reading-tracker-tabs .auth-tab .fv-icon,
 .public-profile-tab i,
-.public-profile-tab .fv-icon {
+.public-profile-tab .fv-icon,
+.public-profile-tab-icon .fv-icon {
   color: inherit !important;
 }
 
@@ -750,7 +760,10 @@ h1, h2, h3, h4, h5, h6 {
 #explore-mode-users.active,
 #tab-book-single.active,
 #tab-auth-login.active,
-#tab-auth-register.active {
+#tab-auth-register.active,
+#public-tab-rec.active,
+#public-tab-added.active,
+#public-tab-booklist.active {
   color: #FFE9A8 !important;
   border-bottom: 2px solid #D4AF37 !important;
   text-shadow: 0 0 8px rgba(212, 175, 55, 0.3) !important;
@@ -761,8 +774,14 @@ h1, h2, h3, h4, h5, h6 {
 .my-books-tabs .auth-tab.active i,
 .my-books-tabs .auth-tab.active .fv-icon,
 .public-profile-tab.active i,
-.public-profile-tab.active .fv-icon {
-  color: #D4AF37 !important;
+.public-profile-tab.active .fv-icon,
+.public-profile-tab.active .public-profile-tab-count,
+.public-profile-tab.active .public-profile-tab-label {
+  color: #FFE9A8 !important;
+}
+
+.public-profile-tab-count {
+  color: #A49777 !important;
 }
 
 .auth-tab.active::after,
@@ -783,7 +802,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .book-card-horizontal:hover,
-.book-card-vertical:hover {
+.book-card-vertical:hover,
+.booklist-detail-book-card:hover {
   border-color: rgba(212, 175, 55, 0.45) !important;
   transform: translateY(-2px) !important;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.85), 0 0 10px rgba(212, 175, 55, 0.15) !important;
@@ -801,12 +821,44 @@ h1, h2, h3, h4, h5, h6 {
   color: #F4D77D !important;
 }
 
-.book-title {
-  color: #F3E8C8 !important;
+.book-title,
+.card-title,
+.booklist-title,
+.book-info .book-title,
+.booklist-detail-book-card .book-title,
+.book-card-vertical .book-title,
+.book-card-horizontal .book-title,
+.booklist-view-card .booklist-title,
+.booklist-card .booklist-title,
+#detail-content .book-title,
+#detail-content h2,
+#detail-content h3,
+#detail-content h4,
+#detail-content h5,
+#tab-explore .book-title,
+#tab-home .book-title,
+#tab-my-books .book-title,
+h3.book-title,
+h4.book-title,
+h5.book-title,
+h2.book-title {
+  color: #FFE9A8 !important;
+  font-weight: 700 !important;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.95) !important;
+  opacity: 1 !important;
+  filter: none !important;
 }
 
-.book-author {
-  color: #A49777 !important;
+.book-author,
+.card-description,
+.booklist-description,
+.book-info .book-author,
+.booklist-detail-book-card .book-author,
+.book-card-vertical .book-author,
+.book-card-horizontal .book-author {
+  color: #D1C29D !important;
+  opacity: 1 !important;
+  filter: none !important;
 }
 
 .book-stats {
@@ -856,10 +908,6 @@ h1, h2, h3, h4, h5, h6 {
   border-color: rgba(212, 175, 55, 0.45) !important;
 }
 
-.booklist-title {
-  color: #F4D77D !important;
-}
-
 .booklist-chip {
   background: #151209 !important;
   border: 1px solid rgba(212, 175, 55, 0.22) !important;
@@ -879,14 +927,16 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .booklist-menu-trigger,
-.booklist-detail-menu-trigger {
+.booklist-detail-menu-trigger,
+.tracker-more-btn {
   background: #111008 !important;
   border: 1px solid rgba(212, 175, 55, 0.22) !important;
   color: #D4AF37 !important;
 }
 
 .booklist-menu-trigger:hover,
-.booklist-detail-menu-trigger:hover {
+.booklist-detail-menu-trigger:hover,
+.tracker-more-btn:hover {
   background: #151209 !important;
   color: #FFE9A8 !important;
   border-color: #D4AF37 !important;
@@ -959,22 +1009,9 @@ h1, h2, h3, h4, h5, h6 {
   border: 1px solid rgba(212, 175, 55, 0.22);
 }
 
-.tracker-card .tracker-title,
-#reading-tracker-list .tracker-title,
-.tracker-title {
-  color: #F3E8C8 !important;
-}
-
 .tracker-progress-label strong,
 .tracker-card .tracker-progress-label strong {
   color: #D1C29D !important;
-}
-
-.tracker-progress-label span,
-.tracker-card .tracker-progress-label span,
-#reading-tracker-list .tracker-progress-label span {
-  color: #FFE9A8 !important;
-  font-weight: 800 !important;
 }
 
 .tracker-status {
@@ -1811,6 +1848,12 @@ button[title="Edit"] {
 [style*="color:#e9d5ff"],
 [style*="color: #7A3FB0"],
 [style*="color:#7A3FB0"],
+[style*="color: #7B4FC2"],
+[style*="color:#7B4FC2"],
+[style*="color: #6B3FA0"],
+[style*="color:#6B3FA0"],
+[style*="color: #8B5CB5"],
+[style*="color:#8B5CB5"],
 [style*="color: #38bdf8"],
 [style*="color:#38bdf8"],
 [style*="color: #7dd3fc"],
@@ -1831,7 +1874,9 @@ button[title="Edit"] {
 [style*="color: #94a3b8"],
 [style*="color:#94a3b8"],
 [style*="color: #6B6070"],
-[style*="color:#6B6070"] {
+[style*="color:#6B6070"],
+[style*="color: #746a78"],
+[style*="color:#746a78"] {
   color: #A49777 !important;
 }
 
@@ -2523,7 +2568,8 @@ button#btn-admin-banner,
 #btn-admin-tag,
 button#btn-admin-tag,
 #tab-profile .glass-card button[onclick*="openBookFormById"],
-button[onclick*="openReadingWrapped"] {
+button[onclick*="openReadingWrapped"],
+.profile-info-box button[onclick*="toggleFollow"] {
   background: #111008 !important;
   background-color: #111008 !important;
   background-image: none !important;
@@ -2539,7 +2585,8 @@ button[onclick*="openEditProfileModal"] i,
 #btn-admin-banner i,
 #btn-admin-tag i,
 #tab-profile .glass-card button[onclick*="openBookFormById"] i,
-button[onclick*="openReadingWrapped"] i {
+button[onclick*="openReadingWrapped"] i,
+.profile-info-box button[onclick*="toggleFollow"] i {
   color: #D4AF37 !important;
 }
 
@@ -2549,9 +2596,21 @@ button[onclick*="openEditProfileModal"]:hover,
 #btn-admin-banner:hover,
 #btn-admin-tag:hover,
 #tab-profile .glass-card button[onclick*="openBookFormById"]:hover,
-button[onclick*="openReadingWrapped"]:hover {
+button[onclick*="openReadingWrapped"]:hover,
+.profile-info-box button[onclick*="toggleFollow"]:hover {
   background: #17140A !important;
   background-color: #17140A !important;
   border-color: #FFE9A8 !important;
   color: #FFE9A8 !important;
+}
+
+#detail-content .book-info h3,
+#detail-content .book-info .book-title,
+.booklist-detail-grid .book-title,
+.booklist-detail-grid h3,
+.booklist-detail-book-card .book-title {
+  color: #FFE9A8 !important;
+  opacity: 1 !important;
+  filter: none !important;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.95) !important;
 }
