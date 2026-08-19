@@ -304,7 +304,24 @@ input[type="search"],
 #book-buy-link,
 #book-synopsis,
 .au-part-title,
-.au-part-url {
+.au-part-url,
+#modal-edit-profile .form-input,
+#modal-edit-profile input,
+#modal-edit-profile textarea,
+#form-edit-profile input,
+#form-edit-profile textarea,
+#edit-fullname,
+#edit-username,
+#edit-avatar-url,
+#edit-bio,
+#modal-theme-editor .form-input,
+#modal-theme-editor textarea,
+#form-theme-editor input,
+#form-theme-editor textarea,
+#theme-name,
+#theme-description,
+#theme-css,
+.fv-theme-css-editor {
   background: #111008 !important;
   background-color: #111008 !important;
   color: #F3E8C8 !important;
@@ -321,7 +338,11 @@ input[type="search"],
 textarea::placeholder,
 input::placeholder,
 #modal-book-form input::placeholder,
-#modal-book-form textarea::placeholder {
+#modal-book-form textarea::placeholder,
+#modal-edit-profile input::placeholder,
+#modal-edit-profile textarea::placeholder,
+#modal-theme-editor input::placeholder,
+#modal-theme-editor textarea::placeholder {
   color: #A49777 !important;
   opacity: 1 !important;
 }
@@ -334,7 +355,15 @@ input:focus,
 #modal-book-form input:focus,
 #modal-book-form textarea:focus,
 #form-book input:focus,
-#form-book textarea:focus {
+#form-book textarea:focus,
+#modal-edit-profile input:focus,
+#modal-edit-profile textarea:focus,
+#form-edit-profile input:focus,
+#form-edit-profile textarea:focus,
+#modal-theme-editor input:focus,
+#modal-theme-editor textarea:focus,
+#form-theme-editor input:focus,
+#form-theme-editor textarea:focus {
   border-color: #D4AF37 !important;
   box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.16), inset 0 0 4px rgba(212, 175, 55, 0.08) !important;
   background: #151209 !important;
@@ -343,7 +372,9 @@ input:focus,
 }
 
 #modal-book-form input:disabled,
-#modal-book-form textarea:disabled {
+#modal-book-form textarea:disabled,
+#modal-edit-profile input:disabled,
+#modal-edit-profile textarea:disabled {
   background: #0B0A06 !important;
   color: #81775F !important;
   border-color: rgba(212, 175, 55, 0.15) !important;
@@ -730,7 +761,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .banner-dot {
-  background: rgba(243, 232, 200, 0.25) !important;
+  background: rgba(243, 232, 200, 0.25);
 }
 
 .banner-dot.active {
@@ -898,7 +929,7 @@ span.tracker-status.reading,
 .tracker-status.not-started {
   background: #111008 !important;
   border-color: rgba(212, 175, 55, 0.2);
-  color: #A49777;
+  color: #A49777 !important;
 }
 
 .tracker-empty,
@@ -1041,7 +1072,7 @@ button.tracker-more-btn:hover {
 
 .profile-bg-banner {
   background: linear-gradient(135deg, #151209 0%, #0B0A06 100%) !important;
-  border-bottom: 1px solid rgba(212, 175, 55, 0.2) !important;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.2);
 }
 
 .profile-avatar-img {
@@ -1057,7 +1088,7 @@ button.tracker-more-btn:hover {
 
 .stat-card:hover {
   background: #151209 !important;
-  border-color: rgba(212, 175, 55, 0.4) !important;
+  border-color: rgba(212, 175, 55, 0.4);
 }
 
 .stat-value,
@@ -1109,7 +1140,7 @@ button.tracker-more-btn:hover {
 }
 
 .modal-header {
-  border-bottom: 1px solid rgba(212, 175, 55, 0.2) !important;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.2);
 }
 
 .modal-title {
@@ -1394,7 +1425,7 @@ button[onclick*="toggleReplyForm"] {
 .tracker-book-option-check,
 .add-booklist-option-check,
 .language-option-check {
-  border: 1px solid rgba(212, 175, 55, 0.4);
+  border: 1px solid rgba(212, 175, 55, 0.4) !important;
   background: #0B0A06 !important;
 }
 
@@ -1416,11 +1447,11 @@ label[style*="background: rgba(168,85,247,0.07)"] {
 
 #exclude-followers-container label {
   background: #0B0A06 !important;
-  border: 1px solid rgba(212, 175, 55, 0.2) !important;
+  border: 1px solid rgba(212, 175, 55, 0.2);
 }
 
 #exclude-followers-container label:hover {
-  border-color: rgba(212, 175, 55, 0.4) !important;
+  border-color: rgba(212, 175, 55, 0.4);
 }
 
 #admin-reports-list > div {
@@ -1452,7 +1483,7 @@ button[title="Edit Cerita"],
 button[title="Edit"] {
   background: #111008 !important;
   color: #FFE9A8 !important;
-  border: 1px solid rgba(212, 175, 55, 0.3) !important;
+  border: 1px solid rgba(212, 175, 55, 0.3);
 }
 
 #banner-admin-list button[onclick*="editBanner"]:hover,
@@ -1464,13 +1495,13 @@ button[title="Edit"] {
 
 #tag-admin-list span {
   background: #151209 !important;
-  border: 1px solid rgba(212, 175, 55, 0.3) !important;
+  border: 1px solid rgba(212, 175, 55, 0.3);
   color: #F3E8C8 !important;
 }
 
 #modal-pending-reason .modal-box {
   background: #0B0A06 !important;
-  border: 1px solid rgba(185, 45, 45, 0.4) !important;
+  border: 1px solid rgba(185, 45, 45, 0.4);
 }
 
 .badge-published {
@@ -1487,7 +1518,7 @@ button[title="Edit"] {
 
 .notif-item {
   background: #111008 !important;
-  border: 1px solid rgba(212, 175, 55, 0.2) !important;
+  border: 1px solid rgba(212, 175, 55, 0.2);
 }
 
 .notif-item.unread {
@@ -1515,13 +1546,13 @@ button[title="Edit"] {
 .password-reset-secondary {
   background: #111008 !important;
   color: #D1C29D !important;
-  border: 1px solid rgba(212, 175, 55, 0.25) !important;
+  border: 1px solid rgba(212, 175, 55, 0.25);
 }
 
 .password-reset-secondary:hover {
   background: #151209 !important;
   color: #FFE9A8 !important;
-  border-color: #D4AF37 !important;
+  border-color: #D4AF37;
 }
 
 .forgot-password-link {
@@ -1530,7 +1561,7 @@ button[title="Edit"] {
 
 .forgot-password-link:hover {
   color: #FFE9A8 !important;
-  text-shadow: 0 0 6px rgba(212, 175, 55, 0.4) !important;
+  text-shadow: 0 0 6px rgba(212, 175, 55, 0.4);
 }
 
 .wrapped-modal-box,
@@ -1575,7 +1606,7 @@ button[title="Edit"] {
 .wrapped-metric,
 .wrapped-modal-box[data-wrapped-style="light"] .wrapped-metric {
   background: #0B0A06 !important;
-  border: 1px solid rgba(212, 175, 55, 0.22) !important;
+  border: 1px solid rgba(212, 175, 55, 0.22);
 }
 
 .wrapped-metric i {
@@ -1585,7 +1616,7 @@ button[title="Edit"] {
 .wrapped-feature-card,
 .wrapped-modal-box[data-wrapped-style="light"] .wrapped-feature-card {
   background: #111008 !important;
-  border: 1px solid rgba(212, 175, 55, 0.35) !important;
+  border: 1px solid rgba(212, 175, 55, 0.35);
 }
 
 .wrapped-feature-cover {
@@ -1614,7 +1645,7 @@ button[title="Edit"] {
 .wrapped-share-icon-btn,
 .wrapped-modal-box[data-wrapped-style="light"] .wrapped-share-icon-btn {
   background: #151209 !important;
-  border: 1px solid rgba(212, 175, 55, 0.4) !important;
+  border: 1px solid rgba(212, 175, 55, 0.4);
   color: #FFE9A8 !important;
 }
 
@@ -1637,13 +1668,13 @@ button[title="Edit"] {
 #modal-confirm #btn-confirm-cancel {
   background: #111008 !important;
   color: #D1C29D !important;
-  border: 1px solid rgba(212, 175, 55, 0.25) !important;
+  border: 1px solid rgba(212, 175, 55, 0.25);
 }
 
 #modal-confirm #btn-confirm-cancel:hover {
   background: #151209 !important;
   color: #FFE9A8 !important;
-  border-color: #D4AF37 !important;
+  border-color: #D4AF37;
 }
 
 #modal-confirm #btn-confirm-action {
@@ -1655,7 +1686,7 @@ button[title="Edit"] {
 
 #modal-confirm #btn-confirm-action:hover {
   background: linear-gradient(135deg, #F4D77D 0%, #D4AF37 100%) !important;
-  box-shadow: 0 0 12px rgba(212, 175, 55, 0.4) !important;
+  box-shadow: 0 0 12px rgba(212, 175, 55, 0.4);
 }
 
 [style*="background: #FFFFFF"],
@@ -1738,8 +1769,7 @@ button[title="Edit"] {
 [style*="border: 1px solid #a855f7"],
 [style*="border:1px solid #a855f7"],
 [style*="border: 2px solid #a855f7"],
-[style*="border:2px solid #a855f7"],
-[style*="border-color: rgba(168,85,247"] {
+[style*="border:2px solid #a855f7"] {
   border-color: rgba(212, 175, 55, 0.22) !important;
 }
 
@@ -1761,7 +1791,7 @@ button[title="Edit"] {
 [style*="background:rgba(56, 189, 248"],
 [style*="background: rgba(56, 189, 248"] {
   background: rgba(212, 175, 55, 0.12) !important;
-  border-color: rgba(212, 175, 55, 0.3) !important;
+  border-color: rgba(212, 175, 55, 0.3);
   color: #FFE9A8 !important;
 }
 
@@ -1904,6 +1934,46 @@ body #modal-faq div[style*="background: rgba(0,0,0,0.25)"] {
   background: #17140A !important;
   color: #FFE9A8 !important;
   border: 1px solid rgba(212, 175, 55, 0.30) !important;
+}
+
+.home-footer button,
+.home-footer button[onclick*="modal-faq"],
+button[onclick*="modal-faq"] {
+  background: #111008 !important;
+  background-color: #111008 !important;
+  border: 1px solid #D4AF37 !important;
+  color: #FFE9A8 !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5) !important;
+}
+
+.home-footer button i,
+.home-footer button .bi,
+button[onclick*="modal-faq"] i {
+  color: #D4AF37 !important;
+}
+
+.home-footer button:hover,
+button[onclick*="modal-faq"]:hover {
+  background: #17140A !important;
+  border-color: #FFE9A8 !important;
+  color: #FFE9A8 !important;
+}
+
+.home-footer .footer-badges,
+.footer-badges {
+  color: #F4D77D !important;
+}
+
+.home-footer .footer-badges span,
+.footer-badges span {
+  color: #FFE9A8 !important;
+}
+
+.home-footer .footer-tagline,
+.home-footer .footer-copyright,
+.footer-tagline,
+.footer-copyright {
+  color: #A49777 !important;
 }
 
 #modal-reading-tracker .modal-title,
@@ -2088,6 +2158,173 @@ body #modal-faq div[style*="background: rgba(0,0,0,0.25)"] {
 
 #modal-booklist-form .booklist-book-option-author {
   color: #A49777 !important;
+}
+
+.fv-theme-create-wrap,
+#modal-display-theme .fv-theme-create-wrap {
+  background: #111008 !important;
+  background-color: #111008 !important;
+  border: 1px dashed rgba(212, 175, 55, 0.35) !important;
+}
+
+.fv-theme-create-wrap p,
+#modal-display-theme .fv-theme-create-wrap p {
+  color: #A49777 !important;
+}
+
+.fv-theme-card,
+#theme-list .fv-theme-card {
+  background: #0B0A06 !important;
+  background-color: #0B0A06 !important;
+  border: 1px solid rgba(212, 175, 55, 0.22) !important;
+}
+
+.fv-theme-card.active,
+#theme-list .fv-theme-card.active {
+  border-color: #D4AF37 !important;
+  box-shadow: 0 4px 14px rgba(212, 175, 55, 0.15) !important;
+}
+
+.fv-theme-preview,
+#theme-list .fv-theme-preview {
+  background: linear-gradient(145deg, #151209, #050504) !important;
+  border: 1px solid rgba(212, 175, 55, 0.3) !important;
+  color: #D4AF37 !important;
+}
+
+.fv-theme-preview-default,
+#theme-list .fv-theme-preview-default {
+  background: linear-gradient(145deg, #151209, #050504) !important;
+  border: 1px solid rgba(212, 175, 55, 0.3) !important;
+  color: #D4AF37 !important;
+}
+
+.fv-theme-info strong,
+#theme-list .fv-theme-info strong {
+  color: #FFE9A8 !important;
+}
+
+.fv-theme-info span,
+#theme-list .fv-theme-info span {
+  color: #A49777 !important;
+}
+
+.fv-theme-use,
+#theme-list .fv-theme-use {
+  background: #111008 !important;
+  color: #D4AF37 !important;
+  border: 1px solid rgba(212, 175, 55, 0.3) !important;
+}
+
+.fv-theme-use:hover,
+#theme-list .fv-theme-use:hover {
+  background: #151209 !important;
+  border-color: #FFE9A8 !important;
+  color: #FFE9A8 !important;
+}
+
+.fv-theme-use.active,
+#theme-list .fv-theme-use.active {
+  background: linear-gradient(135deg, #D4AF37 0%, #B89020 100%) !important;
+  color: #050504 !important;
+  border-color: #FFE9A8 !important;
+  font-weight: 800 !important;
+}
+
+.fv-theme-icon-btn,
+#theme-list .fv-theme-icon-btn {
+  background: #111008 !important;
+  color: #D4AF37 !important;
+  border: 1px solid rgba(212, 175, 55, 0.3) !important;
+}
+
+.fv-theme-icon-btn:hover,
+#theme-list .fv-theme-icon-btn:hover {
+  background: #151209 !important;
+  border-color: #FFE9A8 !important;
+  color: #FFE9A8 !important;
+}
+
+.fv-theme-icon-btn.danger,
+#theme-list .fv-theme-icon-btn.danger {
+  background: rgba(138, 28, 28, 0.2) !important;
+  color: #E8A8A8 !important;
+  border-color: rgba(185, 45, 45, 0.4) !important;
+}
+
+.fv-theme-icon-btn.danger:hover,
+#theme-list .fv-theme-icon-btn.danger:hover {
+  background: rgba(185, 45, 45, 0.35) !important;
+  border-color: #B92D2D !important;
+  color: #FFFFFF !important;
+}
+
+.fv-theme-css-help,
+#modal-theme-editor .fv-theme-css-help {
+  background: #111008 !important;
+  background-color: #111008 !important;
+  border: 1px solid rgba(212, 175, 55, 0.25) !important;
+}
+
+.fv-theme-css-help-title,
+#modal-theme-editor .fv-theme-css-help-title {
+  color: #FFE9A8 !important;
+}
+
+.fv-theme-css-help p,
+#modal-theme-editor .fv-theme-css-help p {
+  color: #A49777 !important;
+}
+
+.fv-theme-css-help code,
+#modal-theme-editor .fv-theme-css-help code {
+  background: #17140A !important;
+  color: #FFE9A8 !important;
+  border: 1px solid rgba(212, 175, 55, 0.25) !important;
+}
+
+.fv-theme-preview-btn,
+#btn-theme-preview {
+  background: #111008 !important;
+  color: #FFE9A8 !important;
+  border: 1px solid rgba(212, 175, 55, 0.3) !important;
+}
+
+.fv-theme-preview-btn:hover,
+#btn-theme-preview:hover {
+  background: #151209 !important;
+  border-color: #D4AF37 !important;
+  color: #FFE9A8 !important;
+}
+
+span[style*="background:rgba(239,68,68"],
+span[style*="background: rgba(239,68,68"],
+span[style*="background:rgba(239, 68, 68"],
+span[style*="background: rgba(239, 68, 68"],
+div[style*="background:rgba(239,68,68"],
+div[style*="background: rgba(239,68,68"] {
+  background: #17140A !important;
+  border: 1px solid rgba(212, 175, 55, 0.35) !important;
+  color: #FFE9A8 !important;
+}
+
+span[style*="background:rgba(239,68,68"] i,
+span[style*="background: rgba(239,68,68"] i,
+div[style*="background:rgba(239,68,68"] i,
+div[style*="background: rgba(239,68,68"] i {
+  color: #D4AF37 !important;
+}
+
+button[onclick*="openSingleBookPrivacyModal"] {
+  background: #111008 !important;
+  border: 1px solid rgba(212, 175, 55, 0.3) !important;
+  color: #D4AF37 !important;
+}
+
+button[onclick*="openSingleBookPrivacyModal"]:hover {
+  background: #151209 !important;
+  border-color: #FFE9A8 !important;
+  color: #FFE9A8 !important;
 }
 
 button[onclick*="dropdown"],
