@@ -2746,10 +2746,6 @@ button[onclick*="openReadingWrapped"]:hover,
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.95) !important;
 }
 
-/* =========================================================
-   READING TRACKER CARD ENHANCEMENTS (CONTRAST & VISIBILITY)
-   ========================================================= */
-
 .tracker-card .tracker-title,
 .tracker-card h3,
 .tracker-card h4,
