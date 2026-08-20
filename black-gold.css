@@ -2614,3 +2614,68 @@ button[onclick*="openReadingWrapped"]:hover,
   filter: none !important;
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.95) !important;
 }
+
+/* =========================================================
+   READING TRACKER CARD ENHANCEMENTS (CONTRAST & VISIBILITY)
+   ========================================================= */
+
+.tracker-card .tracker-title,
+.tracker-card h3,
+.tracker-card h4,
+#reading-tracker-list .tracker-card h3,
+#reading-tracker-list .tracker-card h4,
+#reading-tracker-list .tracker-card .tracker-title,
+.tracker-card > div > div > h4,
+.tracker-card > div > div > h3 {
+  color: #FFE9A8 !important;
+  font-weight: 700 !important;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.9) !important;
+  opacity: 1 !important;
+}
+
+.tracker-card .tracker-meta,
+.tracker-card .tracker-author,
+.tracker-card p,
+#reading-tracker-list .tracker-card p,
+#reading-tracker-list .tracker-card .tracker-meta,
+.tracker-card div:has(> .tracker-progress-bar) ~ p,
+.tracker-card > div > div > p {
+  color: #D1C29D !important;
+  font-size: 13.5px !important;
+  opacity: 1 !important;
+}
+
+.tracker-card .tracker-progress-label,
+.tracker-card .tracker-progress-label span,
+.tracker-card .tracker-progress-label strong,
+.tracker-progress-label,
+#reading-tracker-list .tracker-progress-label span,
+#reading-tracker-list .tracker-progress-label strong {
+  color: #F4D77D !important;
+  font-weight: 600 !important;
+  opacity: 1 !important;
+}
+
+.tracker-card .tracker-progress-percent,
+.tracker-card .tracker-percent,
+.tracker-card span[style*="color:#c084fc"],
+.tracker-card span[style*="color: #c084fc"],
+.tracker-card span[style*="color:#a855f7"],
+.tracker-card span[style*="color: #a855f7"],
+.tracker-card span[style*="color:#38bdf8"],
+.tracker-card span[style*="color: #38bdf8"],
+#reading-tracker-list .tracker-card .tracker-progress-percent,
+#reading-tracker-list .tracker-card span[class*="percent"] {
+  color: #FFE9A8 !important;
+  font-weight: 800 !important;
+  text-shadow: 0 0 8px rgba(212, 175, 55, 0.4) !important;
+  opacity: 1 !important;
+}
+
+.tracker-card .tracker-updated,
+.tracker-card small,
+#reading-tracker-list .tracker-card small,
+#reading-tracker-list .tracker-card .tracker-updated {
+  color: #A49777 !important;
+  opacity: 1 !important;
+}
