@@ -2841,3 +2841,316 @@ button[onclick*="openReadingWrapped"]:hover,
   font-family: 'Marcellus', serif !important;
   opacity: 1 !important;
 }
+/* ==========================================================
+   FIKSIVERSE — NEW WRAPPED / ACHIEVEMENT COMPATIBILITY
+   - Reading Wrapped shared/exported image stays LIGHT.
+   - Live Achievement modal keeps the default FiksiVerse look.
+   - Achievement SHARE image may follow this custom theme.
+   - No selector below changes the live Achievement modal.
+   ========================================================== */
+
+/* 1) Shared Reading Wrapped export: always keep the light share design. */
+#modal-reading-wrapped .wrapped-modal-box.wrapped-exporting,
+#modal-reading-wrapped .wrapped-modal-box.wrapped-exporting[data-wrapped-style="light"] {
+  background: linear-gradient(155deg,#fffaff 0%,#f8f1ff 55%,#eef5ff 100%) !important;
+  color:#34283c !important;
+  border-color:#e1d5e8 !important;
+  box-shadow:0 24px 70px rgba(67,39,84,.18) !important;
+}
+#modal-reading-wrapped .wrapped-modal-box.wrapped-exporting .modal-title,
+#modal-reading-wrapped .wrapped-modal-box.wrapped-exporting .wrapped-hero h2,
+#modal-reading-wrapped .wrapped-modal-box.wrapped-exporting .wrapped-hero h2 span,
+#modal-reading-wrapped .wrapped-modal-box.wrapped-exporting .wrapped-metric strong,
+#modal-reading-wrapped .wrapped-modal-box.wrapped-exporting .wrapped-feature-copy strong,
+#modal-reading-wrapped .wrapped-modal-box.wrapped-exporting .wrapped-empty h3 {
+  color:#34283c !important;
+}
+#modal-reading-wrapped .wrapped-modal-box.wrapped-exporting .wrapped-hero p,
+#modal-reading-wrapped .wrapped-modal-box.wrapped-exporting .wrapped-metric span,
+#modal-reading-wrapped .wrapped-modal-box.wrapped-exporting .wrapped-feature-copy small,
+#modal-reading-wrapped .wrapped-modal-box.wrapped-exporting .wrapped-feature-copy b,
+#modal-reading-wrapped .wrapped-modal-box.wrapped-exporting .wrapped-footer {
+  color:#75677f !important;
+}
+#modal-reading-wrapped .wrapped-modal-box.wrapped-exporting .wrapped-metric {
+  background:#fff !important;
+  border-color:#e5dceb !important;
+}
+#modal-reading-wrapped .wrapped-modal-box.wrapped-exporting .wrapped-feature-card {
+  background:linear-gradient(135deg,#f2e8ff,#eef8ff) !important;
+  border-color:#e2d8eb !important;
+}
+#modal-reading-wrapped .wrapped-modal-box.wrapped-exporting .wrapped-period-tabs {
+  background:#eee7f4 !important;
+}
+#modal-reading-wrapped .wrapped-modal-box.wrapped-exporting .wrapped-period-tabs button,
+#modal-reading-wrapped .wrapped-modal-box.wrapped-exporting .wrapped-style-chip {
+  color:#62546a !important;
+}
+
+/* ==========================================================
+   FIKSIVERSE — LIVE ACHIEVEMENT THEME COMPATIBILITY (v3)
+   CSS-ONLY.
+   - Uses the active custom theme variables.
+   - Does NOT touch Reading Wrapped.
+   - Does NOT touch the exported/shared Achievement card.
+   - Keeps the compact Achievement size from the block below.
+   ========================================================== */
+
+.tracker-achievement-modal-box.wrapped-modal-box {
+  background: var(--surface-overlay, var(--surface-base, #ffffff)) !important;
+  color: var(--text-cream, #1f2937) !important;
+  border: 1px solid var(--border-star-subtle, var(--border-gold-subtle, #ddd6fe)) !important;
+  box-shadow: 0 18px 45px var(--star-glow, var(--gold-glow, rgba(0,0,0,.16))) !important;
+}
+
+.tracker-achievement-modal-box.wrapped-modal-box .modal-title,
+.tracker-achievement-modal-box.wrapped-modal-box .tracker-achievement-heading,
+.tracker-achievement-modal-box.wrapped-modal-box .tracker-achievement-book {
+  color: var(--text-cream-light, var(--text-cream, #1f2937)) !important;
+}
+
+.tracker-achievement-modal-box.wrapped-modal-box .tracker-achievement-card {
+  background: linear-gradient(
+    160deg,
+    var(--surface-elevated, #ffffff) 0%,
+    var(--surface-secondary, #f8fafc) 100%
+  ) !important;
+  color: var(--text-cream, #1f2937) !important;
+  border: 1px solid var(--border-star-subtle, var(--border-gold-subtle, #ddd6fe)) !important;
+  box-shadow: 0 10px 28px var(--star-glow, var(--gold-glow, rgba(0,0,0,.10))) !important;
+}
+
+.tracker-achievement-modal-box.wrapped-modal-box .tracker-achievement-kicker {
+  color: var(--star-primary, var(--gold-primary, #7c3aed)) !important;
+}
+
+.tracker-achievement-modal-box.wrapped-modal-box .tracker-achievement-user {
+  color: var(--text-cream, #1f2937) !important;
+}
+
+.tracker-achievement-modal-box.wrapped-modal-box .tracker-achievement-user > i {
+  color: var(--star-primary, var(--gold-primary, #7c3aed)) !important;
+}
+
+.tracker-achievement-modal-box.wrapped-modal-box .tracker-achievement-heading {
+  color: var(--star-primary, var(--gold-primary, #7c3aed)) !important;
+}
+
+.tracker-achievement-modal-box.wrapped-modal-box .tracker-achievement-copy {
+  color: var(--text-secondary, #64748b) !important;
+}
+
+.tracker-achievement-modal-box.wrapped-modal-box .tracker-achievement-cover {
+  border: 1px solid var(--border-star-subtle, var(--border-gold-subtle, #ddd6fe)) !important;
+  box-shadow: 0 8px 20px var(--star-glow, var(--gold-glow, rgba(0,0,0,.10))) !important;
+}
+
+.tracker-achievement-modal-box.wrapped-modal-box .tracker-achievement-book {
+  color: var(--text-cream-light, var(--text-cream, #1f2937)) !important;
+}
+
+.tracker-achievement-modal-box.wrapped-modal-box .tracker-achievement-author {
+  color: var(--text-muted, #64748b) !important;
+}
+
+.tracker-achievement-modal-box.wrapped-modal-box .tracker-achievement-days {
+  color: var(--star-primary, var(--gold-primary, #7c3aed)) !important;
+}
+
+.tracker-achievement-modal-box.wrapped-modal-box .tracker-achievement-footer {
+  color: var(--text-muted, #64748b) !important;
+}
+
+.tracker-achievement-modal-box.wrapped-modal-box .tracker-achievement-share-icon {
+  background: var(--star-btn-gradient, var(--gold-btn-gradient, #7c3aed)) !important;
+  color: #ffffff !important;
+  border: 1px solid var(--border-star-medium, var(--border-gold-medium, rgba(255,255,255,.35))) !important;
+  box-shadow: 0 8px 22px var(--star-glow, var(--gold-glow, rgba(0,0,0,.14))) !important;
+}
+
+.tracker-achievement-modal-box.wrapped-modal-box .tracker-achievement-share-icon i {
+  color: #ffffff !important;
+}
+
+/* Achievement modal header/close control: keep it inside the theme. */
+.tracker-achievement-modal-box.wrapped-modal-box .modal-title {
+  font-family: var(--fv-font-heading, inherit) !important;
+}
+
+.tracker-achievement-modal-box.wrapped-modal-box button {
+  color: var(--text-cream, #1f2937) !important;
+}
+
+.tracker-achievement-modal-box.wrapped-modal-box button:hover {
+  color: var(--star-primary, var(--gold-primary, #7c3aed)) !important;
+  border-color: var(--border-star-medium, var(--border-gold-medium, #c4b5fd)) !important;
+}
+
+
+/* ==========================================================
+   FIKSIVERSE — ACHIEVEMENT SHARE THEME (blue-miracle(2).css)
+   Only .tracker-achievement-share-card is themed here.
+   The live Achievement modal remains isolated above.
+   ========================================================== */
+.tracker-achievement-share-card.wrapped-modal-box {
+  background:linear-gradient(160deg,#ffffff 0%,#f0f7ff 60%,#e0f2fe 100%) !important;
+  color:#1e3a5f !important;
+  border:1px solid rgba(147,197,253,.5) !important;
+}
+.tracker-achievement-share-card.wrapped-modal-box .tracker-achievement-kicker {
+  color:#2563eb !important;
+  font-family:'Marcellus',serif !important;
+}
+.tracker-achievement-share-card.wrapped-modal-box .tracker-achievement-user {
+  color:#1e3a5f !important;
+  font-family:'Plus Jakarta Sans',sans-serif !important;
+}
+.tracker-achievement-share-card.wrapped-modal-box .tracker-achievement-heading {
+  color:#0f172a !important;
+  font-family:'Marcellus',serif !important;
+}
+.tracker-achievement-share-card.wrapped-modal-box .tracker-achievement-copy {
+  color:#627d98 !important;
+  font-family:'Plus Jakarta Sans',sans-serif !important;
+}
+.tracker-achievement-share-card.wrapped-modal-box .tracker-achievement-cover {
+  border-color:rgba(147,197,253,.5) !important;
+}
+.tracker-achievement-share-card.wrapped-modal-box .tracker-achievement-book {
+  color:#0f172a !important;
+  font-family:'Marcellus',serif !important;
+}
+.tracker-achievement-share-card.wrapped-modal-box .tracker-achievement-author {
+  color:#627d98 !important;
+  font-family:'Plus Jakarta Sans',sans-serif !important;
+}
+.tracker-achievement-share-card.wrapped-modal-box .tracker-achievement-days {
+  color:#2563eb !important;
+  font-family:'Marcellus',serif !important;
+}
+.tracker-achievement-share-card.wrapped-modal-box.wrapped-exporting {
+  background:linear-gradient(160deg,#ffffff 0%,#f0f7ff 60%,#e0f2fe 100%) !important;
+  color:#1e3a5f !important;
+  border-color:rgba(147,197,253,.5) !important;
+}
+
+
+/* ==========================================================
+   FIKSIVERSE — LIVE ACHIEVEMENT SIZE RESTORE (v2)
+   IMPORTANT: LIVE WEB ACHIEVEMENT ONLY.
+   Do NOT affect .tracker-achievement-share-card.
+   Reading Wrapped and exported/shared Achievement are untouched.
+   Restores the compact/default Achievement presentation used by
+   the new app layout instead of the oversized legibility override.
+   ========================================================== */
+
+/* Keep the live modal compact. */
+.tracker-achievement-modal-box.wrapped-modal-box {
+  max-width: 430px !important;
+  width: auto !important;
+  box-sizing: border-box !important;
+}
+
+/* Restore the compact live Achievement card typography. */
+.tracker-achievement-card {
+  border-radius: 22px !important;
+  padding: 25px 20px 20px !important;
+  text-align: center !important;
+}
+
+.tracker-achievement-card .tracker-achievement-kicker {
+  font-size: 10px !important;
+  letter-spacing: .12em !important;
+  margin-bottom: 0 !important;
+}
+
+.tracker-achievement-card .tracker-achievement-user {
+  gap: 7px !important;
+  margin: 10px auto 8px !important;
+  font-size: 12px !important;
+}
+
+.tracker-achievement-card .tracker-achievement-user > i {
+  width: 28px !important;
+  height: 28px !important;
+  font-size: 25px !important;
+}
+
+.tracker-achievement-card .tracker-achievement-heading {
+  font-size: 25px !important;
+  line-height: 1.05 !important;
+  margin: 10px 0 0 !important;
+}
+
+.tracker-achievement-card > p,
+.tracker-achievement-card .tracker-achievement-copy {
+  font-size: 11px !important;
+  line-height: 1.4 !important;
+  margin: 9px 0 4px !important;
+}
+
+.tracker-achievement-card .tracker-achievement-cover {
+  width: 118px !important;
+  height: 168px !important;
+  margin: 16px auto 14px !important;
+  border-radius: 12px !important;
+  object-fit: cover !important;
+}
+
+.tracker-achievement-card > h2:not(.tracker-achievement-heading),
+.tracker-achievement-card .tracker-achievement-book {
+  font-size: 18px !important;
+  line-height: 1.2 !important;
+  margin: 7px 0 10px !important;
+}
+
+.tracker-achievement-card .tracker-achievement-author {
+  font-size: 10px !important;
+  line-height: 1.4 !important;
+  margin-top: 13px !important;
+  margin-bottom: 0 !important;
+}
+
+.tracker-achievement-card .tracker-achievement-days {
+  font-size: 30px !important;
+  line-height: 1 !important;
+  margin-top: 0 !important;
+}
+
+.tracker-achievement-card > span {
+  font-size: 9px !important;
+  margin-top: 5px !important;
+}
+
+.tracker-achievement-card .tracker-achievement-footer {
+  margin-top: 18px !important;
+  font-size: 9px !important;
+}
+
+.tracker-achievement-card .tracker-achievement-share-icon {
+  width: 58px !important;
+  height: 58px !important;
+  margin-top: 5px !important;
+}
+
+.tracker-achievement-card .tracker-achievement-share-icon i {
+  font-size: 23px !important;
+}
+
+/* Mobile: preserve the compact proportions without enlarging the card. */
+@media (max-width: 420px) {
+  .tracker-achievement-modal-box.wrapped-modal-box {
+    max-width: 430px !important;
+    width: calc(100vw - 32px) !important;
+  }
+  .tracker-achievement-card {
+    padding: 22px 16px 18px !important;
+  }
+  .tracker-achievement-card .tracker-achievement-heading {
+    font-size: 22px !important;
+  }
+  .tracker-achievement-card .tracker-achievement-days {
+    font-size: 27px !important;
+  }
+}
